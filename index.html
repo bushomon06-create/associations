@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بوابة الجمعيات والمؤسسات — جسر للرعاية والتأهيل</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              200: '#bae0fd',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              800: '#0c4a6e',
+              900: '#082f49',
+            },
+            tealAccent: {
+              50: '#f0fdfa',
+              100: '#ccfbf1',
+              500: '#14b8a6',
+              600: '#0d9488',
+              700: '#0f766e',
+            },
+            surface: {
+              main: '#f8fafd',
+              card: '#ffffff',
+              border: '#e2e8f0',
+              subtle: '#f1f5f9',
+            }
+          },
+          fontFamily: {
+            sans: ['"IBM Plex Sans Arabic"', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      background-color: #f8fafd;
+      color: #0f172a;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .transition-smooth {
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    /* Hide spin buttons on number input */
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+    }
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-surface-main text-slate-800 antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- Header -->
+  <header class="bg-white/95 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-700 to-brand-500 flex items-center justify-center text-white shadow-sm shadow-brand-500/20">
+          <span class="material-symbols-outlined text-[22px]">corporate_fare</span>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2">
+            <span class="font-bold text-base text-slate-900 tracking-tight">جسر للرعاية</span>
+            <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-brand-50 text-brand-700 border border-brand-200/70">بوابة المنظمات</span>
+          </div>
+          <span class="text-xs text-slate-500 font-normal">بوابة الجمعيات ومؤسسات الرعاية المجتمعية الشريكة</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 text-xs text-slate-600">
+        <div class="hidden md:flex items-center gap-2 bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-lg text-slate-600">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span>شراكة رسمية معتمدة</span>
+        </div>
+        <a href="الواجهة الاساسية.html" class="flex items-center gap-1.5 text-brand-700 bg-brand-50 hover:bg-brand-100 border border-brand-200/80 font-semibold py-1.5 px-3 rounded-lg transition-colors">
+          <span class="material-symbols-outlined text-[18px]">dashboard</span>
+          <span>الواجهة الأساسية</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 max-w-6xl w-full mx-auto px-6 py-6 md:py-8">
+
+    <!-- VIEW 1: Organization Welcome View (Initial Default) -->
+    <section id="view-welcome" class="transition-smooth">
+      <div class="max-w-3xl mx-auto bg-white border border-slate-200/80 rounded-2xl shadow-sm p-8 md:p-10 text-center relative overflow-hidden">
+        <!-- Subtle Top Glow -->
+        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-48 bg-gradient-to-b from-brand-100/60 to-transparent blur-2xl pointer-events-none"></div>
+
+        <!-- Emblem -->
+        <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-50 border border-brand-200/80 text-brand-600 mb-5 shadow-inner">
+          <span class="material-symbols-outlined text-[34px]">handshake</span>
+        </div>
+
+        <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3 tracking-tight">
+          أهلاً بكم في بوابة الجمعيات والمؤسسات الشريكة
+        </h1>
+
+        <p class="text-slate-600 text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-8 font-normal">
+          تُمكّن المنصة الجمعيات الخيرية والمؤسسات الراعية من تسجيل وإدراج المستفيدين وذوي الإعاقة ضمن برامج التأهيل الطبي والعلاج الطبيعي المنزلي المعتمدة، مع إدارة باقات الاشتراك الجماعية ومتابعة خطط التأهيل ونسب تقدم كل مستفيد عبر تقارير أداء دورية موثقة سريرياً.
+        </p>
+
+        <!-- 3 Compact Feature Highlights -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 mb-8 text-right">
+          <div class="p-4 rounded-xl bg-slate-50/90 border border-slate-200/70 flex flex-col gap-2 hover:border-brand-200 transition-colors">
+            <div class="w-8 h-8 rounded-lg bg-brand-100 text-brand-700 flex items-center justify-center">
+              <span class="material-symbols-outlined text-[19px]">layers</span>
+            </div>
+            <h3 class="font-semibold text-sm text-slate-900">باقات اشتراك مرنة</h3>
+            <p class="text-xs text-slate-500 leading-normal">خيارات تناسب مختلف أحجام المنظمات من 10 مستفيدين وحتى باقات مخصصة موسعة.</p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-50/90 border border-slate-200/70 flex flex-col gap-2 hover:border-brand-200 transition-colors">
+            <div class="w-8 h-8 rounded-lg bg-tealAccent-100 text-tealAccent-700 flex items-center justify-center">
+              <span class="material-symbols-outlined text-[19px]">trending_up</span>
+            </div>
+            <h3 class="font-semibold text-sm text-slate-900">متابعة مدى الاستفادة ونسب التقدم</h3>
+            <p class="text-xs text-slate-500 leading-normal">لوحة تحكم حية لقياس الالتزام اليومي والتعافي الحركي لكل بطل مسجل.</p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-50/90 border border-slate-200/70 flex flex-col gap-2 hover:border-brand-200 transition-colors">
+            <div class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center">
+              <span class="material-symbols-outlined text-[19px]">description</span>
+            </div>
+            <h3 class="font-semibold text-sm text-slate-900">تقارير أداء دورية لكل مستفيد</h3>
+            <p class="text-xs text-slate-500 leading-normal">تقارير طبية وتأهيلية موثقة من أخصائيين مرخصين تُصدر وتُرفع بانتظام.</p>
+          </div>
+        </div>
+
+        <!-- Primary CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <button id="btn-start-subscription" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 active:scale-[0.99] text-white font-bold text-sm shadow-md shadow-brand-600/20 transition-all flex items-center justify-center gap-2">
+            <span>التالي: اختيار باقة الاشتراك</span>
+            <span class="material-symbols-outlined text-[18px]">arrow_left_alt</span>
+          </button>
+          <a href="الواجهة الاساسية.html" class="w-full sm:w-auto px-6 py-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 text-slate-700 font-semibold text-sm transition-all flex items-center justify-center gap-2">
+            <span>الانتقال المباشر للواجهة الأساسية</span>
+            <span class="material-symbols-outlined text-[18px]">arrow_left_alt</span>
+          </a>
+        </div>
+
+        <!-- Extra Note -->
+        <div class="mt-6 flex items-center justify-center gap-4 text-xs text-slate-500">
+          <span class="flex items-center gap-1">
+            <span class="material-symbols-outlined text-[15px] text-emerald-600">verified</span>
+            اعتماد فوري للجمعيات المرخصة
+          </span>
+          <span class="text-slate-300">•</span>
+          <span class="flex items-center gap-1">
+            <span class="material-symbols-outlined text-[15px] text-brand-600">security</span>
+            خصوصية وسرية بيانات المستفيدين
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 2: Package & Pricing Selection View (Initially Hidden) -->
+    <section id="view-pricing" class="hidden transition-smooth">
+      
+      <!-- Top Navigation & Return Header -->
+      <div class="flex items-center justify-between mb-5">
+        <div class="flex items-center gap-2">
+          <button id="btn-back-to-welcome" class="h-9 px-3 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 text-xs font-medium flex items-center gap-1 transition-colors shadow-2xs">
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            <span>العودة للمقدمة</span>
+          </button>
+          <div class="h-4 w-px bg-slate-200 mx-1"></div>
+          <div>
+            <h2 class="text-lg font-bold text-slate-900 leading-tight">اختيار باقة المستفيدين وفترة الاشتراك</h2>
+            <p class="text-xs text-slate-500">حدد مدة الاشتراك وعدد المستفيدين المكفولين لتطبيق الشروط والخصومات تلقائياً</p>
+          </div>
+        </div>
+
+        <!-- Live Helper Badge -->
+        <div class="hidden sm:flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs px-3 py-1.5 rounded-lg">
+          <span class="material-symbols-outlined text-[16px] text-emerald-600">savings</span>
+          <span id="current-saving-badge">احتساب دقيق وشامل لكافة التخفيضات</span>
+        </div>
+      </div>
+
+      <!-- Duration Switcher Bar (3 Tabs) -->
+      <div class="bg-white border border-slate-200/90 rounded-xl p-1.5 mb-6 shadow-2xs">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-1.5" role="tablist">
+          
+          <!-- Tab 1: Monthly (Default) -->
+          <button type="button" class="duration-tab active relative flex flex-col items-center justify-center py-2.5 px-4 rounded-lg text-center transition-all bg-brand-600 text-white font-medium shadow-xs" data-duration="1">
+            <div class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[18px]">calendar_month</span>
+              <span class="text-sm font-semibold">اشتراك شهري</span>
+            </div>
+            <span class="text-[11px] opacity-90 mt-0.5">شهر واحد (تجديد مرن)</span>
+          </button>
+
+          <!-- Tab 2: 3 Months -->
+          <button type="button" class="duration-tab relative flex flex-col items-center justify-center py-2.5 px-4 rounded-lg text-center transition-all bg-slate-50 hover:bg-slate-100 text-slate-700 font-normal border border-transparent" data-duration="3">
+            <div class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[18px]">event_repeat</span>
+              <span class="text-sm font-semibold">اشتراك 3 أشهر</span>
+            </div>
+            <span class="inline-block mt-0.5 px-2 py-0.2 rounded-full text-[10px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-300">
+              شهر مجاني للباقات من 40 فأكثر
+            </span>
+          </button>
+
+          <!-- Tab 3: 6 Months -->
+          <button type="button" class="duration-tab relative flex flex-col items-center justify-center py-2.5 px-4 rounded-lg text-center transition-all bg-slate-50 hover:bg-slate-100 text-slate-700 font-normal border border-transparent" data-duration="6">
+            <div class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+              <span class="text-sm font-semibold">اشتراك 6 أشهر</span>
+            </div>
+            <span class="inline-block mt-0.5 px-2 py-0.2 rounded-full text-[10px] font-semibold bg-amber-100 text-amber-900 border border-amber-300">
+              خصم شهرين - احتساب 4 أشهر فقط
+            </span>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Package Selection Grid (3-column compact desktop grid with 6 cards) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6" id="packages-grid">
+
+        <!-- Card 1: 10 Beneficiaries -->
+        <div class="package-card cursor-pointer bg-white border border-slate-200/90 hover:border-brand-300 rounded-xl p-4 transition-smooth shadow-2xs relative flex flex-col justify-between" data-n="10">
+          <div>
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center font-bold text-xs">
+                  10
+                </div>
+                <div>
+                  <h3 class="font-bold text-sm text-slate-900">باقة 10 مستفيدين</h3>
+                  <span class="text-[11px] text-slate-500">كفالة فئة مصغرة</span>
+                </div>
+              </div>
+              <span class="selection-indicator w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center transition-colors">
+                <span class="indicator-dot w-2.5 h-2.5 rounded-full bg-transparent"></span>
+              </span>
+            </div>
+
+            <div class="bg-slate-50 rounded-lg p-2.5 mb-3 border border-slate-100">
+              <span class="text-[11px] text-slate-500 block mb-0.5">الإجمالي المستحق</span>
+              <div class="flex items-baseline gap-1">
+                <span class="price-value text-2xl font-bold text-brand-800 tracking-tight" id="price-card-10">$270</span>
+                <span class="text-xs text-slate-500 font-medium">USD</span>
+              </div>
+            </div>
+
+            <ul class="text-[11px] text-slate-600 space-y-1.5 mb-2">
+              <li class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[14px] text-emerald-600">check_circle</span>
+                <span>خطط علاج طبيعي منزلية فردية</span>
+              </li>
+              <li class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[14px] text-emerald-600">check_circle</span>
+                <span>تقارير تقييم دورية لكل مستفيد</span>
+              </li>
+            </ul>
+          </div>
+          <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-500 flex items-center justify-between">
+            <span class="duration-label text-slate-500">فترة الاشتراك: شهر واحد</span>
+            <span class="text-brand-600 font-medium select-btn-text">اختيار الباقة</span>
+          </div>
+        </div>
+
+        <!-- Card 2: 20 Beneficiaries -->
+        <div class="package-card cursor-pointer bg-white border border-slate-200/90 hover:border-brand-300 rounded-xl p-4 transition-smooth shadow-2xs relative flex flex-col justify-between" data-n="20">
+          <div>
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center font-bold text-xs">
+                  20
+                </div>
+                <div>
+                  <h3 class="font-bold text-sm text-slate-900">باقة 20 مستفيد</h3>
+                  <span class="text-[11px] text-slate-500">كفالة متوسطة</span>
+                </div>
+              </div>
+              <span class="selection-indicator w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center transition-colors">
+                <span class="indicator-dot w-2.5 h-2.5 rounded-full bg-transparent"></span>
+              </span>
+            </div>
+
+            <div class="bg-slate-50 rounded-lg p-2.5 mb-3 border border-slate-100">
+              <span class="text-[11px] text-slate-500 block mb-0.5">الإجمالي المستحق</span>
+              <div class="flex items-baseline gap-1">
+                <span class="price-value text-2xl font-bold text-brand-800 tracking-tight" id="price-card-20">$540</span>
+                <span class="text-xs text-slate-500 font-medium">USD</span>
+              </div>
+            </div>
+
+            <ul class="text-[11px] text-slate-600 space-y-1.5 mb-2">
+              <li class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[14px] text-emerald-600">check_circle</span>
+                <span>إشراف سريري ومتابعة أسبوعية</span>
+              </li>
+              <li class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[14px] text-emerald-600">check_circle</span>
+                <span>لوحة متابعة تقدم الحالات للمنظمة</span>
+              </li>
+            </ul>
+          </div>
+          <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-500 flex items-center justify-between">
+            <span class="duration-label text-slate-500">فترة الاشتراك: شهر واحد</span>
+            <span class="text-brand-600 font-medium select-btn-text">اختيار الباقة</span>
+          </div>
+        </div>
+
+        <!-- Card 3: 30 Beneficiaries -->
+        <div class="package-card cursor-pointer bg-white border border-slate-200/90 hover:border-brand-300 rounded-xl p-4 transition-smooth shadow-2xs relative flex flex-col justify-between" data-n="30">
+          <div>
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center font-bold text-xs">
+                  30
+                </div>
+                <div>
+                  <h3 class="font-bold text-sm text-slate-900">باقة 30 مستفيد</h3>
+                  <span class="text-[11px] text-slate-500">الأكثر اختياراً للجمعيات</span>
+                </div>
+              </div>
+              <span class="selection-indicator w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center transition-colors">
+                <span class="indicator-dot w-2.5 h-2.5 rounded-full bg-transparent"></span>
+              </span>
+            </div>
+
+            <div class="bg-slate-50 rounded-lg p-2.5 mb-3 border border-slate-100">
+              <span class="text-[11px] text-slate-500 block mb-0.5">الإجمالي المستحق</span>
+              <div class="flex items-baseline gap-1">
+                <span class="price-value text-2xl font-bold text-brand-800 tracking-tight" id="price-card-30">$840</span>
+                <span class="text-xs text-slate-500 font-medium">USD</span>
+              </div>
+            </div>
+
+            <ul class="text-[11px] text-slate-600 space-y-1.5 mb-2">
+              <li class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[14px] text-emerald-600">check_circle</span>
+                <span>تخفيض تلقائي في إجمالي الباقة</span>
+              </li>
+              <li class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[14px] text-emerald-600">check_circle</span>
+                <span>منسق رعاية مخصص لمتابعة المستفيدين</span>
+              </li>
+            </ul>
+          </div>
+          <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-500 flex items-center justify-between">
+            <span class="duration-label text-slate-500">فترة الاشتراك: شهر واحد</span>
+            <span class="text-brand-600 font-medium select-btn-text">اختيار الباقة</span>
+          </div>
+        </div>
+
+        <!-- Card 4: 40 Beneficiaries (Eligible for 3-Month Free Month Perk) -->
+        <div class="package-card cursor-pointer bg-white border border-slate-200/90 hover:border-brand-300 rounded-xl p-4 transition-smooth shadow-2xs relative flex flex-col justify-between" data-n="40">
+          <div>
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-tealAccent-50 text-tealAccent-700 flex items-center justify-center font-bold text-xs">
+                  40
+                </div>
+                <div>
+                  <div class="flex items-center gap-1.5">
+                    <h3 class="font-bold text-sm text-slate-900">باقة 40 مستفيد</h3>
+                    <span class="perk-tag hidden px-1.5 py-0.2 rounded text-[10px] bg-emerald-100 text-emerald-800 font-semibold">+شهر مجاناً</span>
+                  </div>
+                  <span class="text-[11px] text-slate-500">كفالة واسعة للمؤسسات</span>
+                </div>
+              </div>
+              <span class="selection-indicator w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center transition-colors">
+                <span class="indicator-dot w-2.5 h-2.5 rounded-full bg-transparent"></span>
+              </span>
+            </div>
+
+            <div class="bg-slate-50 rounded-lg p-2.5 mb-3 border border-slate-100">
+              <span class="text-[11px] text-slate-500 block mb-0.5">الإجمالي المستحق</span>
+              <div class="flex items-baseline gap-1">
+                <span class="price-value text-2xl font-bold text-brand-800 tracking-tight" id="price-card-40">$1,040</span>
+                <span class="text-xs text-slate-500 font-medium">USD</span>
+              </div>
+            </div>
+
+            <ul class="text-[11px] text-slate-600 space-y-1.5 mb-2">
+              <li class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[14px] text-emerald-600">check_circle</span>
+                <span>تأهيل شامل + استشارات مرئية دورية</span>
+              </li>
+              <li class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[14px] text-emerald-600">check_circle</span>
+                <span>مشمولة بميزة الشهر المجاني عند اختيار 3 أشهر</span>
+              </li>
+            </ul>
+          </div>
+          <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-500 flex items-center justify-between">
+            <span class="duration-label text-slate-500">فترة الاشتراك: شهر واحد</span>
+            <span class="text-brand-600 font-medium select-btn-text">اختيار الباقة</span>
+          </div>
+        </div>
+
+        <!-- Card 5: 50 Beneficiaries (Eligible for 3-Month Free Month Perk) -->
+        <div class="package-card cursor-pointer bg-white border border-slate-200/90 hover:border-brand-300 rounded-xl p-4 transition-smooth shadow-2xs relative flex flex-col justify-between" data-n="50">
+          <div>
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-tealAccent-50 text-tealAccent-700 flex items-center justify-center font-bold text-xs">
+                  50
+                </div>
+                <div>
+                  <div class="flex items-center gap-1.5">
+                    <h3 class="font-bold text-sm text-slate-900">باقة 50 مستفيد</h3>
+                    <span class="perk-tag hidden px-1.5 py-0.2 rounded text-[10px] bg-emerald-100 text-emerald-800 font-semibold">+شهر مجاناً</span>
+                  </div>
+                  <span class="text-[11px] text-slate-500">كفالة مؤسسية كبرى</span>
+                </div>
+              </div>
+              <span class="selection-indicator w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center transition-colors">
+                <span class="indicator-dot w-2.5 h-2.5 rounded-full bg-transparent"></span>
+              </span>
+            </div>
+
+            <div class="bg-slate-50 rounded-lg p-2.5 mb-3 border border-slate-100">
+              <span class="text-[11px] text-slate-500 block mb-0.5">الإجمالي المستحق</span>
+              <div class="flex items-baseline gap-1">
+                <span class="price-value text-2xl font-bold text-brand-800 tracking-tight" id="price-card-50">$1,300</span>
+                <span class="text-xs text-slate-500 font-medium">USD</span>
+              </div>
+            </div>
+
+            <ul class="text-[11px] text-slate-600 space-y-1.5 mb-2">
+              <li class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[14px] text-emerald-600">check_circle</span>
+                <span>تغطية كاملة مع دعم فني سريري مخصص</span>
+              </li>
+              <li class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[14px] text-emerald-600">check_circle</span>
+                <span>تصدير تقارير أداء مجمعة موثقة بصيغة PDF</span>
+              </li>
+            </ul>
+          </div>
+          <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-500 flex items-center justify-between">
+            <span class="duration-label text-slate-500">فترة الاشتراك: شهر واحد</span>
+            <span class="text-brand-600 font-medium select-btn-text">اختيار الباقة</span>
+          </div>
+        </div>
+
+        <!-- Card 6: Custom Package (عدد مخصص) -->
+        <div class="package-card cursor-pointer bg-white border border-slate-200/90 hover:border-brand-300 rounded-xl p-4 transition-smooth shadow-2xs relative flex flex-col justify-between" id="card-custom" data-n="custom">
+          <div>
+            <div class="flex items-start justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-700 flex items-center justify-center font-bold text-xs">
+                  <span class="material-symbols-outlined text-[18px]">tune</span>
+                </div>
+                <div>
+                  <h3 class="font-bold text-sm text-slate-900">باقة عدد مخصص</h3>
+                  <span class="text-[11px] text-slate-500">أدخل أي عدد تحتاجه مؤسستك</span>
+                </div>
+              </div>
+              <span class="selection-indicator w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center transition-colors">
+                <span class="indicator-dot w-2.5 h-2.5 rounded-full bg-transparent"></span>
+              </span>
+            </div>
+
+            <!-- Custom Input Box -->
+            <div class="mb-3">
+              <label class="block text-[11px] font-medium text-slate-700 mb-1" for="custom-input">
+                حدد عدد المستفيدين (مثلاً: 5، 15، 75، 100+):
+              </label>
+              <div class="relative flex items-center">
+                <input 
+                  type="number" 
+                  id="custom-input" 
+                  min="1" 
+                  max="1000" 
+                  value="15" 
+                  placeholder="أدخل العدد"
+                  class="w-full text-right font-bold text-slate-900 text-sm py-1.5 px-3 rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all pl-12"
+                />
+                <span class="absolute left-3 text-xs text-slate-400 font-normal pointer-events-none">مستفيد</span>
+              </div>
+              <span id="custom-perk-hint" class="text-[10px] text-emerald-700 mt-1 block font-medium hidden">
+                ✓ مؤهلة لخصم الشهر الإضافي المجاني (لأن العدد ≥ 40)
+              </span>
+            </div>
+
+            <div class="bg-indigo-50/60 rounded-lg p-2.5 mb-2 border border-indigo-100">
+              <span class="text-[11px] text-slate-500 block mb-0.5">الإجمالي المستحق المحسوب</span>
+              <div class="flex items-baseline gap-1">
+                <span class="price-value text-2xl font-bold text-indigo-950 tracking-tight" id="price-card-custom">$420</span>
+                <span class="text-xs text-slate-500 font-medium">USD</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-500 flex items-center justify-between">
+            <span class="duration-label text-slate-500">فترة الاشتراك: شهر واحد</span>
+            <span class="text-brand-600 font-medium select-btn-text">اختيار وتفعيل</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Checkout Summary Bar -->
+      <div class="bg-white border border-slate-200/90 rounded-2xl p-4 md:p-5 shadow-sm">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+          
+          <!-- Summary Details -->
+          <div class="flex items-center flex-wrap gap-4 text-sm text-slate-700 w-full md:w-auto">
+            <div class="flex items-center gap-2">
+              <span class="w-9 h-9 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+              </span>
+              <div>
+                <span class="text-xs text-slate-500 block">تفاصيل الباقة المحددة</span>
+                <div class="flex items-center gap-1.5 font-bold text-slate-900">
+                  <span id="summary-beneficiaries">10 مستفيدين</span>
+                  <span class="text-slate-300">•</span>
+                  <span id="summary-duration" class="text-brand-700">اشتراك شهري (1 شهر)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Savings / Note Badge in Summary -->
+            <div id="summary-savings-tag" class="hidden px-2.5 py-1 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold items-center gap-1">
+              <span class="material-symbols-outlined text-[15px]">verified</span>
+              <span id="summary-savings-text">تم تطبيق الخصم المقرر بنجاح</span>
+            </div>
+          </div>
+
+          <!-- Total Price & CTA Button -->
+          <div class="flex items-center justify-between md:justify-end gap-3 sm:gap-4 w-full md:w-auto border-t md:border-t-0 pt-3 md:pt-0 border-slate-100">
+            <div class="text-right ml-1 sm:ml-2">
+              <span class="text-[11px] text-slate-500 font-medium block">المبلغ الإجمالي النهائي</span>
+              <div class="flex items-baseline gap-1">
+                <span id="summary-final-total" class="text-2xl md:text-3xl font-extrabold text-brand-800 tracking-tight">$270</span>
+                <span class="text-xs font-bold text-slate-600">USD</span>
+              </div>
+            </div>
+
+            <!-- زر التالي للانتقال المباشر للواجهة الأساسية -->
+            <button id="btn-next-to-main" class="h-11 px-7 rounded-xl bg-brand-600 hover:bg-brand-700 active:scale-[0.99] text-white font-bold text-sm shadow-md shadow-brand-600/20 transition-all flex items-center gap-2 shrink-0 cursor-pointer" title="الانتقال إلى الواجهة الأساسية">
+              <span>التالي</span>
+              <span class="material-symbols-outlined text-[20px]">arrow_left_alt</span>
+            </button>
+
+            <!-- زر تفاصيل ومراجعة الباقة -->
+            <button id="btn-proceed-checkout" class="h-11 px-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 text-slate-600 hover:text-slate-900 font-medium text-xs transition-all flex items-center gap-1.5 shrink-0 cursor-pointer" title="مراجعة وتأكيد الاشتراك">
+              <span class="material-symbols-outlined text-[16px]">receipt_long</span>
+              <span class="hidden sm:inline">تفاصيل الباقة</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Checkout Success Modal (Mock) -->
+  <div id="modal-checkout-success" class="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 text-center shadow-xl border border-slate-200 animate-in fade-in zoom-in duration-200">
+      <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center mb-4">
+        <span class="material-symbols-outlined text-[32px]">check_circle</span>
+      </div>
+      <h3 class="text-lg font-bold text-slate-900 mb-1">تم تجهيز ملف اشتراك المنظمة</h3>
+      <p class="text-xs text-slate-600 mb-4 leading-relaxed" id="modal-success-desc">
+        سيتم توجيه ممثل الجمعية لبوابة الدفع المعتمدة لاستكمال سداد الباقة، وستصلك فوراً بيانات تسجيل دخول المستفيدين.
+      </p>
+      <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 mb-5 text-right text-xs space-y-1">
+        <div class="flex justify-between">
+          <span class="text-slate-500">عدد المستفيدين المكفولين:</span>
+          <span class="font-bold text-slate-800" id="modal-beneficiaries">10</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-500">مدة الاشتراك:</span>
+          <span class="font-bold text-slate-800" id="modal-duration">اشتراك شهري</span>
+        </div>
+        <div class="flex justify-between border-t border-slate-200 pt-1 text-sm">
+          <span class="font-bold text-slate-900">المبلغ المستحق النهائي:</span>
+          <span class="font-extrabold text-emerald-700" id="modal-price">$270 USD</span>
+        </div>
+      </div>
+      <div class="flex gap-2">
+        <button id="btn-close-modal" class="py-2.5 px-4 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium text-xs transition-colors">
+          إغلاق
+        </button>
+        <button id="btn-modal-next" class="flex-1 py-2.5 rounded-lg bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
+          <span>التالي (الدخول للواجهة الأساسية)</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_left_alt</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-auto border-t border-slate-200/80 bg-white py-4 text-center text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div class="flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-[16px] text-brand-600">verified_user</span>
+        <span>منصة جسر للرعاية والتأهيل — برنامج الشراكة المجتمعية للجمعيات والمؤسسات © 2025</span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-400">
+        <a href="#" class="hover:text-slate-600">الشروط والأحكام</a>
+        <span>•</span>
+        <a href="#" class="hover:text-slate-600">اتفاقية مستوى الخدمة السريرية (SLA)</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- State & Dynamic Pricing Logic Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Elements
+      const viewWelcome = document.getElementById('view-welcome');
+      const viewPricing = document.getElementById('view-pricing');
+      const btnStartSubscription = document.getElementById('btn-start-subscription');
+      const btnBackToWelcome = document.getElementById('btn-back-to-welcome');
+      const durationTabs = document.querySelectorAll('.duration-tab');
+      const packageCards = document.querySelectorAll('.package-card');
+      const customInput = document.getElementById('custom-input');
+      const customPerkHint = document.getElementById('custom-perk-hint');
+      const summaryBeneficiaries = document.getElementById('summary-beneficiaries');
+      const summaryDuration = document.getElementById('summary-duration');
+      const summaryFinalTotal = document.getElementById('summary-final-total');
+      const summarySavingsTag = document.getElementById('summary-savings-tag');
+      const summarySavingsText = document.getElementById('summary-savings-text');
+      const currentSavingBadge = document.getElementById('current-saving-badge');
+      const btnProceedCheckout = document.getElementById('btn-proceed-checkout');
+      const btnNextToMain = document.getElementById('btn-next-to-main');
+      const btnModalNext = document.getElementById('btn-modal-next');
+      const modalCheckoutSuccess = document.getElementById('modal-checkout-success');
+      const btnCloseModal = document.getElementById('btn-close-modal');
+
+      // State
+      let selectedDuration = 1; // 1, 3, or 6
+      let selectedBeneficiaryCount = 10; // 10, 20, 30, 40, 50, or custom number
+      let isCustomSelected = false;
+
+      // 1. Calculate Base 1-Month Total (baseMonthly) for N beneficiaries:
+      function calculateBaseMonthly(N) {
+        if (!N || N < 1) N = 1;
+        if (N <= 9) {
+          return N * 30;
+        } else if (N <= 19) {
+          return (N * 30) - 30;
+        } else if (N <= 29) {
+          return (N * 30) - 60;
+        } else if (N <= 39) {
+          return N * 28;
+        } else if (N <= 69) {
+          return N * 26;
+        } else {
+          return N * 25;
+        }
+      }
+
+      // 2. Apply Duration Multiplier to get Final Total (finalTotal):
+      function calculateFinalTotal(N, duration) {
+        const baseMonthly = calculateBaseMonthly(N);
+        if (duration === 1) {
+          return baseMonthly * 1;
+        } else if (duration === 3) {
+          if (N < 40) {
+            return baseMonthly * 3;
+          } else {
+            // N >= 40: Deduct 1 month (pay for 2 months only)
+            return baseMonthly * 2;
+          }
+        } else if (duration === 6) {
+          // Multiply by 4 months (discount of 2 months)
+          return baseMonthly * 4;
+        }
+        return baseMonthly;
+      }
+
+      // Format currency
+      function formatUSD(amount) {
+        return '$' + amount.toLocaleString('en-US');
+      }
+
+      // Update All Displayed Prices on Cards & Summary
+      function updateAllPricesAndDisplay() {
+        const durationTextMap = {
+          1: 'اشتراك شهري (1 شهر)',
+          3: 'اشتراك 3 أشهر',
+          6: 'اشتراك 6 أشهر'
+        };
+
+        const durationSimpleMap = {
+          1: 'شهر واحد',
+          3: '3 أشهر',
+          6: '6 أشهر'
+        };
+
+        // Update card duration labels
+        document.querySelectorAll('.duration-label').forEach(el => {
+          el.textContent = `فترة الاشتراك: ${durationSimpleMap[selectedDuration]}`;
+        });
+
+        // Update Preset Card Prices
+        [10, 20, 30, 40, 50].forEach(n => {
+          const total = calculateFinalTotal(n, selectedDuration);
+          const priceEl = document.getElementById(`price-card-${n}`);
+          if (priceEl) {
+            priceEl.textContent = formatUSD(total);
+          }
+        });
+
+        // Toggle perk-tags on 40 and 50 cards
+        const showPerk = (selectedDuration === 3);
+        document.querySelectorAll('.perk-tag').forEach(tag => {
+          if (showPerk) {
+            tag.classList.remove('hidden');
+          } else {
+            tag.classList.add('hidden');
+          }
+        });
+
+        // Update Custom Card Price
+        let customVal = parseInt(customInput.value, 10);
+        if (isNaN(customVal) || customVal < 1) customVal = 1;
+        const customTotal = calculateFinalTotal(customVal, selectedDuration);
+        const priceCustomEl = document.getElementById('price-card-custom');
+        if (priceCustomEl) {
+          priceCustomEl.textContent = formatUSD(customTotal);
+        }
+
+        // Custom perk hint
+        if (selectedDuration === 3 && customVal >= 40) {
+          customPerkHint.classList.remove('hidden');
+        } else {
+          customPerkHint.classList.add('hidden');
+        }
+
+        // Determine active N
+        let activeN = isCustomSelected ? customVal : selectedBeneficiaryCount;
+
+        // Calculate summary total
+        const finalCheckoutPrice = calculateFinalTotal(activeN, selectedDuration);
+
+        // Update Summary Bar
+        summaryBeneficiaries.textContent = `${activeN} ${activeN === 1 ? 'مستفيد واحد' : (activeN === 2 ? 'مستفيدان' : (activeN <= 10 ? 'مستفيدين' : 'مستفيد'))}`;
+        summaryDuration.textContent = durationTextMap[selectedDuration];
+        summaryFinalTotal.textContent = formatUSD(finalCheckoutPrice);
+
+        // Summary savings badge text & visibility
+        if (selectedDuration === 6) {
+          summarySavingsTag.classList.remove('hidden');
+          summarySavingsTag.classList.add('flex');
+          summarySavingsText.textContent = 'تم تطبيق خصم شهرين مجاناً (احتساب 4 أشهر فقط)';
+          currentSavingBadge.textContent = 'خصم استثنائي: شهران مجاناً على كامل الباقات';
+        } else if (selectedDuration === 3) {
+          if (activeN >= 40) {
+            summarySavingsTag.classList.remove('hidden');
+            summarySavingsTag.classList.add('flex');
+            summarySavingsText.textContent = 'ميزة الباقات الكبرى: تم منح شهر مجاني إضافي (احتساب شهرين فقط)';
+            currentSavingBadge.textContent = 'عرض 3 أشهر: شهر مجاني للباقات من 40 مستفيد فأكثر';
+          } else {
+            summarySavingsTag.classList.add('hidden');
+            summarySavingsTag.classList.remove('flex');
+            currentSavingBadge.textContent = 'اشتراك 3 أشهر (خصم شهر مجاني للباقات من 40 فأكثر)';
+          }
+        } else {
+          summarySavingsTag.classList.add('hidden');
+          summarySavingsTag.classList.remove('flex');
+          currentSavingBadge.textContent = 'اشتراك شهري مرن مع إمكانية التجديد التلقائي';
+        }
+      }
+
+      // Highlight selected card visually
+      function highlightSelectedCard() {
+        packageCards.forEach(card => {
+          const cardN = card.getAttribute('data-n');
+          const indicator = card.querySelector('.selection-indicator');
+          const dot = card.querySelector('.indicator-dot');
+          const selectText = card.querySelector('.select-btn-text');
+
+          const isThisSelected = isCustomSelected ? (cardN === 'custom') : (parseInt(cardN, 10) === selectedBeneficiaryCount);
+
+          if (isThisSelected) {
+            card.classList.add('border-brand-500', 'ring-2', 'ring-brand-500/20', 'bg-brand-50/20');
+            card.classList.remove('border-slate-200/90');
+            if (indicator) {
+              indicator.classList.add('border-brand-600', 'bg-brand-50');
+              indicator.classList.remove('border-slate-300');
+            }
+            if (dot) {
+              dot.classList.add('bg-brand-600');
+              dot.classList.remove('bg-transparent');
+            }
+            if (selectText) {
+              selectText.textContent = 'الباقة المختارة ✓';
+              selectText.classList.add('font-bold', 'text-brand-700');
+            }
+          } else {
+            card.classList.remove('border-brand-500', 'ring-2', 'ring-brand-500/20', 'bg-brand-50/20');
+            card.classList.add('border-slate-200/90');
+            if (indicator) {
+              indicator.classList.remove('border-brand-600', 'bg-brand-50');
+              indicator.classList.add('border-slate-300');
+            }
+            if (dot) {
+              dot.classList.remove('bg-brand-600');
+              dot.classList.add('bg-transparent');
+            }
+            if (selectText) {
+              selectText.textContent = (cardN === 'custom' ? 'اختيار وتفعيل' : 'اختيار الباقة');
+              selectText.classList.remove('font-bold', 'text-brand-700');
+            }
+          }
+        });
+      }
+
+      // 1. Navigation Actions between Views
+      btnStartSubscription.addEventListener('click', () => {
+        viewWelcome.classList.add('hidden');
+        viewPricing.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        updateAllPricesAndDisplay();
+        highlightSelectedCard();
+      });
+
+      btnBackToWelcome.addEventListener('click', () => {
+        viewPricing.classList.add('hidden');
+        viewWelcome.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 2. Duration Tabs Switcher
+      durationTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          durationTabs.forEach(t => {
+            t.classList.remove('active', 'bg-brand-600', 'text-white', 'shadow-xs');
+            t.classList.add('bg-slate-50', 'text-slate-700');
+          });
+
+          tab.classList.add('active', 'bg-brand-600', 'text-white', 'shadow-xs');
+          tab.classList.remove('bg-slate-50', 'text-slate-700');
+
+          selectedDuration = parseInt(tab.getAttribute('data-duration'), 10);
+          updateAllPricesAndDisplay();
+        });
+      });
+
+      // 3. Package Cards Selection
+      packageCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+          // If clicked inside input of custom, don't break
+          const cardN = card.getAttribute('data-n');
+          if (cardN === 'custom') {
+            isCustomSelected = true;
+            customInput.focus();
+          } else {
+            isCustomSelected = false;
+            selectedBeneficiaryCount = parseInt(cardN, 10);
+          }
+          highlightSelectedCard();
+          updateAllPricesAndDisplay();
+        });
+      });
+
+      // 4. Custom Input Live Change
+      customInput.addEventListener('input', () => {
+        isCustomSelected = true;
+        highlightSelectedCard();
+        updateAllPricesAndDisplay();
+      });
+
+      customInput.addEventListener('focus', () => {
+        isCustomSelected = true;
+        highlightSelectedCard();
+        updateAllPricesAndDisplay();
+      });
+
+      // 5. Checkout Modal Trigger
+      btnProceedCheckout.addEventListener('click', () => {
+        let activeN = isCustomSelected ? parseInt(customInput.value, 10) || 1 : selectedBeneficiaryCount;
+        const total = calculateFinalTotal(activeN, selectedDuration);
+        const durationTextMap = {
+          1: 'اشتراك شهري (1 شهر)',
+          3: 'اشتراك 3 أشهر',
+          6: 'اشتراك 6 أشهر'
+        };
+
+        document.getElementById('modal-beneficiaries').textContent = `${activeN} مستفيد`;
+        document.getElementById('modal-duration').textContent = durationTextMap[selectedDuration];
+        document.getElementById('modal-price').textContent = `${formatUSD(total)} USD`;
+
+        modalCheckoutSuccess.classList.remove('hidden');
+      });
+
+      btnCloseModal.addEventListener('click', () => {
+        modalCheckoutSuccess.classList.add('hidden');
+      });
+
+      // Close modal on click outside
+      modalCheckoutSuccess.addEventListener('click', (e) => {
+        if (e.target === modalCheckoutSuccess) {
+          modalCheckoutSuccess.classList.add('hidden');
+        }
+      });
+
+      // 6. Navigation to Main Interface (الواجهة الاساسية.html)
+      function navigateToMainInterface() {
+        let activeN = isCustomSelected ? parseInt(customInput.value, 10) || 1 : selectedBeneficiaryCount;
+        const total = calculateFinalTotal(activeN, selectedDuration);
+
+        // Store selected package info in localStorage
+        try {
+          localStorage.setItem('sanad_package_size', activeN);
+          localStorage.setItem('sanad_duration_months', selectedDuration);
+          localStorage.setItem('sanad_total_usd', total);
+        } catch (e) {
+          console.warn('LocalStorage error:', e);
+        }
+
+        // Navigate with query params
+        const targetUrl = 'الواجهة الاساسية.html?pkg=' + encodeURIComponent(activeN) + '&duration=' + encodeURIComponent(selectedDuration) + '&total=' + encodeURIComponent(total);
+        window.location.href = targetUrl;
+      }
+
+      if (btnNextToMain) {
+        btnNextToMain.addEventListener('click', navigateToMainInterface);
+      }
+
+      if (btnModalNext) {
+        btnModalNext.addEventListener('click', navigateToMainInterface);
+      }
+
+      // Initial Call
+      highlightSelectedCard();
+      updateAllPricesAndDisplay();
+    });
+  </script>
+</body>
+</html>
